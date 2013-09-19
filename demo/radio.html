@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stylable radio demo</title>
+    <style type="text/css">
+
+/* Label for unchecked radio */
+input[type="radio"] + label { color: blue }
+
+.radio-before-label {
+  display: inline-block; width: 16px; height: 16px; margin-right: 10px;
+  vertical-align: middle; background: yellow; border: 1px orange solid
+}
+.radio-after-label {
+  display: inline-block; width: 27px; height: 18px; vertical-align: middle;
+  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Checkbox-blue.svg/27px-Checkbox-blue.svg.png') no-repeat; margin-left: 1em;
+}
+
+/* Label for checked radio */
+.radio-checked { color: red !important }
+
+/* Before-beginning part when checked */
+.radio-checked .radio-before-label {
+  border: 0; height: 18px; width: 18px;
+  background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Erste_hilfe.svg/18px-Erste_hilfe.svg.png') no-repeat
+}
+
+/* After-end part when checked */
+.radio-checked .radio-after-label {
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Checkbox.svg/27px-Checkbox.svg.png')
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Stylable radio demo</h1>
+
+    <form id="demoForm">
+      <div>
+        <input type="radio" id="unique_id1" name="radioGroup" />
+        <label for="unique_id1">A</label>
+      </div>
+
+      <div style="margin-top: 1em">
+        <input type="radio" id="unique_id2" name="radioGroup" />
+        <label for="unique_id2">B</label>
+      </div>
+    </form>
+
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://raw.github.com/applicius/yacsscomp/master/yacsscomp.js"></script>
+    <script type="text/javascript">
+      $("input[type='radio'] + label").stylableRadio()
+    </script>
+  </body>
+</html>
