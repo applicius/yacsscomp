@@ -5,11 +5,11 @@ Requires jQuery 1.10+
 ## Stylable radio button
 
 This library doesn't directly provide custom/styled radio buttons, 
-but it alter DOM and handle state event (`checked` property) so that 
+but it alters DOM and handles state event (`checked` property), so that 
 you can style those radio as you want (down to IE8): see [demo](http://applicius.github.io/yacsscomp/demo/radio.html).
 
 Initial HTML must have a matching label, 
-with valid `for` attribute after each radio to be styled, inside a form:
+with valid `for` attribute, after each radio to be styled, inside a form:
 
 ```html
 <form ...>
