@@ -7,7 +7,7 @@ $.fn.stylableRadio = function() {
        position: "absolute", border: "0", padding: "0", clip: "rect(0 0 0 0)", 
        overflow: "hidden"
     });
-    if (r.is(":checked")) { e.addClass("checkbox-checked") }
+    if (r.is(":checked")) { e.addClass("radio-checked") }
     e.click(function() {
       $("input[name='" + r.attr("name") + "']:checked + .radio-checked", r.prop("form")).removeClass("radio-checked");
       $(this).addClass("radio-checked")
