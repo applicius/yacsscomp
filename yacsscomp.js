@@ -23,6 +23,7 @@ $.fn.stylableCheckbox = function() {
        position: "absolute", border: "0", padding: "0", clip: "rect(0 0 0 0)",
        overflow: "hidden"
     });
+    if (c.is(":checked")) { l.addClass("checkbox-checked") }
     e.click(function() {
       if (e.hasClass("checkbox-checked")) e.removeClass("checkbox-checked")
       else e.addClass("checkbox-checked")
