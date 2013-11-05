@@ -55,6 +55,12 @@ Following provided classes can be used to create your own CSS rules:
   - `.radio-checked .radio-before-label`: Beginning of checked label.
   - `.radio-checked .radio-after-label`: End of checked label
 
+### `select()`
+
+```javascript
+$("#radio").stylableRadio("select")
+```
+
 ## Stylable checkbox
 
 This library doesn't directly provide custom/styled checkboxes, 
