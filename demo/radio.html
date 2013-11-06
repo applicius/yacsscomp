@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>Stylable radio demo</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" />
+
     <style type="text/css">
 
 /* Label for unchecked radio */
@@ -33,25 +39,50 @@ input[type="radio"] + label { color: blue }
     </style>
   </head>
   <body>
-    <h1>Stylable radio demo</h1>
+    <div class="pageheader">
+      <h1>Stylable radio <small>demo</small></h1>
+    </div>
 
-    <form id="demoForm">
+    <div class="container">
+      <form id="demoForm">
+        <div>
+          <input type="radio" id="unique_id1" name="radioGroup" value="A" />
+          <label for="unique_id1">A</label>
+        </div>
+
+        <div style="margin-top: 1em">
+          <input type="radio" id="unique_id2" 
+                 name="radioGroup" checked="checked" value="B" />
+          <label for="unique_id2">B</label>
+        </div>
+      </form>
+
       <div>
-        <input type="radio" id="unique_id1" name="radioGroup" />
-        <label for="unique_id1">A</label>
-      </div>
+        <button class="btn btn-default" id="select-a">
+          Select A</button>
 
-      <div style="margin-top: 1em">
-        <input type="radio" id="unique_id2" 
-               name="radioGroup" checked="checked" />
-        <label for="unique_id2">B</label>
-      </div>
-    </form>
+        <button class="btn btn-default" id="select-b">
+          Select B</button>
 
-    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://raw.github.com/applicius/yacsscomp/master/yacsscomp.js"></script>
+        <button class="btn btn-default" id="display-val">
+          Display value</button>
+      </div>
+    </div>
+
+    <script src="//codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script src="//rawgithub.com/applicius/yacsscomp/master/yacsscomp.js"></script>
     <script type="text/javascript">
-      $("input[type='radio'] + label").stylableRadio()
+      $("input[type='radio'] + label").stylableRadio();
+      $("#select-a").click(function() { 
+        $("#unique_id1").stylableRadio("select")
+      });
+      $("#select-b").click(function() { 
+        $("#unique_id2").stylableRadio("select")
+      });
+      $("#display-val").click(function() { 
+        alert("Selected value: " + $("input[name='radioGroup']:checked").val())
+      });
     </script>
   </body>
 </html>
