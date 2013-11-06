@@ -1,26 +1,28 @@
 (function ($) {
     "use strict";
 
-    $.fn.stylableRadio = function() {
-        $(this).each(function(arg) {
-            var select = function(r) {
-                var id = r.attr("id"), name = r.attr("name"), 
-                form = r.prop("form");
-                
-                $("input[name='" + name + "']:checked + .radio-checked", form).
-                  removeClass("radio-checked");
-                
-                $("label[for="+id+"]", form).addClass("radio-checked");
-                
-                return r;
-            };
+    $.fn.stylableRadio = function(arg) {
+        var select = function(r) {
+            var id = r.attr("id"), name = r.attr("name"), 
+            form = r.prop("form");
 
-            if (arg == "select") {
-                return select($(this))
-            }
+            $("input[name='" + name + "'] + .radio-checked", form).
+                removeClass("radio-checked");
 
-            // ---
+            $("label[for="+id+"]", form).addClass("radio-checked");
+            
+            return r;
+        };
 
+        if (arg == "select") {
+            var e = $(this).first();
+            e.trigger("click");
+            return e
+        }
+
+        // ---
+
+        $(this).each(function() {
             var e = $(this); var i = e.attr("for"); var r = $("#" + i); 
             e.html("<span class=\"radio-before-label\"></span><span class=\"wrapper\">" + e.html() + "</span><span class=\"radio-after-label\"></span>");
             r.css({ 
@@ -29,7 +31,8 @@
                 padding: "0", clip: "rect(0 0 0 0)", overflow: "hidden"
             });
             if (r.is(":checked")) { e.addClass("radio-checked") }
-            e.click(function() { select(r) })
+            e.click(function() { select(r) });
+            r.click(function() { select(r) })
         })
     };
 

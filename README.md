@@ -21,7 +21,17 @@ with valid `for` attribute, after each radio to be styled, inside a form:
 </form>
 ```
 
-Javascript setup:
+### JavaScript usage
+
+It can be applied on label associated with/just after radio.
+
+```html
+<input type="radio" id="unique_id1" name="radioGroup" />
+<label for="unique_id1">Label</label>
+```
+
+Radio must have `id` and `name` attributes (and be in a form element).
+Then setup can be perform with:
 
 ```javascript
 // At end/after document load, make them stylable
@@ -55,10 +65,16 @@ Following provided classes can be used to create your own CSS rules:
   - `.radio-checked .radio-before-label`: Beginning of checked label.
   - `.radio-checked .radio-after-label`: End of checked label
 
-### `select()`
+#### Methods
+
+##### select
+
+`.stylableRadio('select')`
+
+Selects a radio element (and unselect others having the same `name`).
 
 ```javascript
-$("#radio").stylableRadio("select")
+$('#radio').stylableRadio('select')
 ```
 
 ## Stylable checkbox
