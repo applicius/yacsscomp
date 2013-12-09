@@ -15,9 +15,7 @@
         };
 
         if (arg == "select") {
-            var e = $(this).first();
-            e.trigger("click");
-            return e
+            return $(this).trigger("click")
         }
 
         // ---
@@ -25,7 +23,7 @@
         $(this).each(function() {
             var e = $(this); 
 
-            if (e.hasClass("yacsscomp")) { /* Skip */ return false }
+            if (e.hasClass("yacsscomp")) { /* Skip */ return true }
 
             var i = e.attr("for"), r = $("#" + i); 
             e.addClass("yacsscomp").html("<span class=\"radio-before-label\"></span><span class=\"wrapper\">" + e.html() + "</span><span class=\"radio-after-label\"></span>");
@@ -40,11 +38,35 @@
         })
     };
 
-    $.fn.stylableCheckbox = function() {
+    $.fn.stylableCheckbox = function(arg) {
+        var checked = function(e) {
+            return e.hasClass("checkbox-checked") || e.is(":checked")
+        };
+
+        if (arg == "checked") {
+            return checked($(this))
+        }
+
+        if (arg == "select") {
+            var e = $(this);
+
+            if (checked(e)) return e;
+            else return e.trigger("click")
+        }
+
+        if (arg == "unselect") {
+            var e = $(this);
+
+            if (!checked(e)) return e;
+            else return e.trigger("click")
+        }
+
+        // ---
+
         $(this).each(function() {
             var e = $(this); 
             
-            if (e.hasClass("yacsscomp")) { /* Skip */ return false }
+            if (e.hasClass("yacsscomp")) { /* Skip */ return true }
             
             var c = $("#" + e.attr("for"));
             e.addClass("yacsscomp").html("<span class=\"checkbox-before-label\"></span><span class=\"wrapper\">" + e.html() + "</span><span class=\"checkbox-after-label\"></span>");
