@@ -129,3 +129,31 @@ Following provided classes can be used to create your own CSS rules:
 * `.checkbox-checked`: State class, on label when associated checkbox is checked.
   - `.checkbox-checked .checkbox-before-label`: Beginning of checked label.
   - `.checkbox-checked .checkbox-after-label`: End of checked label
+
+#### Methods
+
+##### select
+
+`.stylableCheckbox('select')`
+
+Selects a checkbox element..
+
+```javascript
+$('#checkbox').stylableCheckbox('select')
+```
+
+`.stylableCheckbox('unselect')`
+
+Un-selects a checkbox element.
+
+```javascript
+$('#checkbox').stylableCheckbox('unselect')
+```
+
+`.stylableCheckbox('checked')`
+
+Returns true if checkbox is checked, or false.
+
+```javascript
+var b = $('#checkbox').stylableCheckbox('checked');
+```
