@@ -2,7 +2,31 @@
     "use strict";
 
     $.fn.stylableRadio = function(arg) {
+        if (arg == "disable") {
+            return $(this).each(function(i,e) {
+                var l = $(e), id = l.attr("for"), 
+                f = l.prop("form");
+
+                l.attr("disabled", "disabled");
+                $("#"+id, f).attr("disabled", "disabled")
+            })
+        } // end of disable
+
+        if (arg == "enable") {
+            return $(this).each(function(i,e) {
+                var l = $(e), id = l.attr("for"), 
+                f = l.prop("form");
+
+                l.removeAttr("disabled");
+                $("#"+id, f).removeAttr("disabled")
+            })
+        } // end of enable
+
+        // ---
+
         var select = function(r) {
+            if (r.attr("disabled") == "disabled") return r; // Skip
+
             var id = r.attr("id"), name = r.attr("name"), 
             form = r.prop("form");
 

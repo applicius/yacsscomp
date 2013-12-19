@@ -43,7 +43,7 @@ and `span.radio-after-label` at end; e.g:
 
 ```html
 <input type="radio" id="unique_id1" name="radioGroup" />
-<label for="unique_id1">
+<label for="unique_id1" class="yacsscomp">
   <span class="radio-before-label"></span>
   <span class="wrapper">A</span><!-- Initial label text -->
   <span class="radio-after-label"></span>
@@ -59,6 +59,7 @@ CSS class `radio-checked` is added to label:
 
 Following provided classes can be used to create your own CSS rules:
 
+* `.yacsscomp`: Styled label.
 * `.radio-before-label`: Span at beginning of label.
 * `.radio-after-label`: Span at end of label.
 * `.radio-checked`: State class, on label when associated radio is checked.
@@ -75,6 +76,17 @@ Selects a radio element (and unselect others having the same `name`).
 
 ```javascript
 $('#radio').stylableRadio('select')
+```
+
+##### disable/enable
+
+`.stylableRadio('disable')` / `.stylableRadio('enable')`
+
+Disables/enables a radio element.
+
+```javascript
+$('.radio').stylableRadio('disable');
+$('.radio').stylableRadio('enable');
 ```
 
 ## Stylable checkbox
