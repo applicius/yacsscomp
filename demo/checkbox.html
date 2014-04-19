@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>Stylable checkbox demo</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
     <style type="text/css">
 
 /* Label for unchecked checkbox */
@@ -33,21 +37,24 @@ input[type="checkbox"] + label { color: blue }
     </style>
   </head>
   <body>
-    <h1>Stylable checkbox demo</h1>
+    <div class="container-fluid">
+      <h1>Stylable checkbox demo</h1>
 
-    <form id="demoForm">
-      <div>
-        <input type="checkbox" id="unique_id1" />
-        <label for="unique_id1">A</label>
-      </div>
+      <form id="demoForm">
+        <div>
+          <input type="checkbox" id="unique_id1" />
+          <label for="unique_id1">A</label>
+        </div>
+        
+        <div style="margin-top: 1em">
+          <input type="checkbox" id="unique_id2" checked="checked" />
+          <label for="unique_id2">B</label>
+        </div>
+      </form>
+    </div>
 
-      <div style="margin-top: 1em">
-        <input type="checkbox" id="unique_id2" checked="checked" />
-        <label for="unique_id2">B</label>
-      </div>
-    </form>
-
-    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="https://raw.github.com/applicius/yacsscomp/master/yacsscomp.js"></script>
     <script type="text/javascript">
       $("input[type='checkbox'] + label").stylableCheckbox()
