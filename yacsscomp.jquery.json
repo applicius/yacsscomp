@@ -1,0 +1,23 @@
+{
+    "name": "yacsscomp",
+    "version": "1.0.0",
+    "title": "Yet Another CSS component library",
+    "description": "Provides stylable alternatives for HTML components such as radio and checkbox (compatible down to IE8).",
+    "keywords": [ "stylable", "checkbox", "radio", "ie8" ],
+    "homepage": "http://www.applicius.fr",
+    "docs": "https://github.com/applicius/yacsscomp/blob/master/README.md",
+    "demo": "https://applicius.github.io/yacsscomp/",
+    "bugs": "https://github.com/applicius/yacsscomp/issues",
+    "download": "https://github.com/applicius/yacsscomp/archive/1.0.0.zip",
+    "author": {
+        "name": "Applicius",
+        "url": "http://www.applicius.fr"
+    },
+    "maintainers": [ { "name": "cchantep" } ],
+    "licenses": [
+        { "type": "GPLv2", "url": "http://www.example.com/licenses/gpl.html" }
+    ],
+    "dependencies": {
+        "jquery": ">=1.10"
+    }
+}

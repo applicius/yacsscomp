@@ -1,12 +1,12 @@
-# Yet Another CSS components library
+# Yet Another CSS component library
 
-Requires jQuery 1.10+
+Provides stylable alternatives for HTML components such as radio and checkbox (compatible down to IE8).
+
+> Requires jQuery 1.10+
 
 ## Stylable radio button
 
-This library doesn't directly provide custom/styled radio buttons, 
-but it alters DOM and handles state event (`checked` property), so that 
-you can style those radio buttons as you want (down to IE8): see [demo](http://applicius.github.io/yacsscomp/demo/radio.html).
+This library doesn't directly provide custom/styled radio buttons, but it alters DOM and handles state event (`checked` property), so that you can style those radio buttons as you want (down to IE8): see [demo](http://applicius.github.io/yacsscomp/demo/radio.html).
 
 Initial HTML must have a matching label, 
 with valid `for` attribute, after each radio to be styled, inside a form:
