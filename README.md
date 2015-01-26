@@ -6,7 +6,7 @@ Provides stylable alternatives for HTML components such as radio and checkbox (c
 
 ## Stylable radio button
 
-This library doesn't directly provide custom/styled radio buttons, but it alters DOM and handles state event (`checked` property), so that you can style those radio buttons as you want (down to IE8): see [demo](http://applicius.github.io/yacsscomp/demo/radio.html).
+This library doesn't directly provide custom/styled radio buttons, but it alters DOM and handles state event (`checked` property), so that you can style those radio buttons as you want (down to IE8): see [demo](http://cchantep.github.io/yacsscomp/demo/radio.html).
 
 Initial HTML must have a matching label, 
 with valid `for` attribute, after each radio to be styled, inside a form:
@@ -93,7 +93,7 @@ $('.radio').stylableRadio('enable');
 
 This library doesn't directly provide custom/styled checkboxes, 
 but it alters DOM and handles state event (`checked` property), so that 
-you can style those checkboxes as you want (down to IE8): see [demo](http://applicius.github.io/yacsscomp/demo/checkbox.html).
+you can style those checkboxes as you want (down to IE8): see [demo](http://cchantep.github.io/yacsscomp/demo/checkbox.html).
 
 Initial HTML must have a matching label, 
 with valid `for` attribute, after each checkbox to be styled, inside a form:
